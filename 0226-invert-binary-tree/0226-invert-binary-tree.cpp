@@ -15,10 +15,7 @@ public:
         if(!head) return;
         postOrder(head->left);
         postOrder(head->right);
-        TreeNode *leftNode = head->right;
-        TreeNode* rightNode = head->left;
-        head->left = leftNode;
-        head->right = rightNode;
+        swap(head->left, head->right);
     }
     
     TreeNode* invertTree(TreeNode* root) {
