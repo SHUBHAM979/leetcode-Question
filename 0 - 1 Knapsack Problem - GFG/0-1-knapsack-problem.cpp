@@ -22,8 +22,35 @@ class Solution
     //Function to return max value that can be put in knapsack of capacity W.
     int knapSack(int W, int wt[], int val[], int n) 
     { 
-       vector<vector<int>> dp(n, vector<int>(W+1, -1));
-       return reccu(0,W,val, wt,n, dp);
+       vector<vector<int>> dp(n, vector<int>(W+1, 0));
+      // return reccu(0,W,val, wt,n, dp);
+      for(int j=0; j <=W;j++) {
+          if(j < wt[0]) {
+              dp[0][j] =0;
+          }else {
+              dp[0][j]= val[0];
+              //cout << "hello";
+          }
+      }
+      for(int i =1; i <n ; i++) {
+          for(int j =0; j <=W; j++) {
+              int x = 0 + dp[i-1][j];
+                if(j >= wt[i]) {
+                    x = max(x , val[i] + dp[i-1][ j - wt[i]]);
+                }
+                dp[i][j]= x;
+          }
+      }
+      
+    //   for(int i=0; i< n; i++) {
+    //       for(int j=0; j<=W; j++) {
+    //           cout << dp[i][j] << " ";
+    //       }
+    //       cout << "\n";
+    //   }
+      return dp[n-1][W];
+      
+      
     }
 };
 
