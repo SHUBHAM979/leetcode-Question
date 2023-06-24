@@ -32,27 +32,27 @@ class Solution
 	        st.pop();
 	    }
 	    return jsd;
-	    for(int i =0; i< V; i++)
-    	    for(auto it : adj[i])  {
-    	        indeg[it]++;
-    	    }
-    	queue<int> qu;
-    	for(int i=0; i< V ; i++) {
-    	    if(indeg[i] == 0) {
-    	        qu.push(i);
-    	    }
-    	}
-    	vector<int> ans;
-    	while(!qu.empty()) {
-    	    int x = qu.front();
-    	    qu.pop();
-    	    ans.push_back(x);
-    	    for(i : adj[x]) {
-    	        indeg[i]--;
-    	        if(indeg[i]==0) qu.push(i);
-    	    }
-    	}
-    	return ans;
+	   // for(int i =0; i< V; i++)
+    // 	    for(auto it : adj[i])  {
+    // 	        indeg[it]++;
+    // 	    }
+    // 	queue<int> qu;
+    // 	for(int i=0; i< V ; i++) {
+    // 	    if(indeg[i] == 0) {
+    // 	        qu.push(i);
+    // 	    }
+    // 	}
+    // 	vector<int> ans;
+    // 	while(!qu.empty()) {
+    // 	    int x = qu.front();
+    // 	    qu.pop();
+    // 	    ans.push_back(x);
+    // 	    for(i : adj[x]) {
+    // 	        indeg[i]--;
+    // 	        if(indeg[i]==0) qu.push(i);
+    // 	    }
+    // 	}
+    // 	return ans;
 	    
 	}
 };
