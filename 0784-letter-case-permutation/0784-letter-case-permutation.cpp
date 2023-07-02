@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void rec(int i , string s, set<string>& ans, string minians) {
+  void rec(int i , string s, set<string>& ans, string minians) {
         if(i == s.size()) {
             ans.insert(minians);
             return;
