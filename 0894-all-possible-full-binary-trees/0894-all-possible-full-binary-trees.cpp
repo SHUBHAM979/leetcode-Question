@@ -10,13 +10,21 @@
  * };
  */
 class Solution {
+    vector<vector<TreeNode*>> dp;
 public:
+    Solution() : dp(21) {
+        
+    }
+    
     vector<TreeNode*> allPossibleFBT(int n) {
         if(n%2 == 0) return {};
         vector<TreeNode*> res;
         if(n == 1) {
             res.push_back(new TreeNode(0));
             return res;
+        }
+        if(dp[n].size() !=0){
+            return dp[n];
         }
         for(int i =1 ; i < n; i +=2) {
             vector<TreeNode*> leftSubtree = allPossibleFBT(i);
@@ -29,6 +37,6 @@ public:
             }
             
         }
-        return res;
+        return dp[n] = res;
     }
 };
