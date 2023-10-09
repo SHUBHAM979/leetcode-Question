@@ -10,7 +10,7 @@ class Solution {
         int cont=0;
         while(n !=0) {
             if(n&1 == 1) cont++;
-            n = n>>1;
+            n /=2;
         }
         return cont;
     }
